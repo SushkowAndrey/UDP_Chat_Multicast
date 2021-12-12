@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UDP_Chat_Multicast_Lib", "UDP_Chat_Multicast_Lib\UDP_Chat_Multicast_Lib.csproj", "{4408EA14-D6AF-4919-91D2-F29867B851A5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UDP_Chat", "UDP_Chat\UDP_Chat.csproj", "{74FF1497-A679-4DBE-B1F3-8CFF082D91B9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{4408EA14-D6AF-4919-91D2-F29867B851A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4408EA14-D6AF-4919-91D2-F29867B851A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4408EA14-D6AF-4919-91D2-F29867B851A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74FF1497-A679-4DBE-B1F3-8CFF082D91B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74FF1497-A679-4DBE-B1F3-8CFF082D91B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74FF1497-A679-4DBE-B1F3-8CFF082D91B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74FF1497-A679-4DBE-B1F3-8CFF082D91B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
