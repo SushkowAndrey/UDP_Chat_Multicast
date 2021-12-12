@@ -18,10 +18,10 @@ namespace UDP_Chat_Multicast_Lib
             return await receiver.ReceiveAsync();
         }
 
-        public static async Task<UdpReceiveResult> ReceiveMulticastAsync(int port, string multicast_ip)
+        public static async Task<UdpReceiveResult> ReceiveMulticastAsync(int port, string multicastIp)
         {
             using var receiver = new UdpClient(port);
-            receiver.JoinMulticastGroup(IPAddress.Parse(multicast_ip));
+            receiver.JoinMulticastGroup(IPAddress.Parse(multicastIp));
             return await receiver.ReceiveAsync();
         }
     }

@@ -5,26 +5,27 @@ using UDP_Chat_Multicast_Lib;
 
 namespace UDP_Chat
 {
-    class Program
+    internal static class Program
     {
-        private static string multicast_ip;
-        private static int port;
-        private static string user_name;
-        static async Task Main()
+        private static string _multicastIp;
+        private static int _port;
+        private static string _userName;
+
+        private static async Task Main()
         {
             Console.Write("Введите ip-адрес рассылки: ");
-            multicast_ip = Console.ReadLine();
+            _multicastIp = Console.ReadLine();
             Console.Write("Введите порт: ");
-            port = Convert.ToInt32(Console.ReadLine());
+            _port = Convert.ToInt32(Console.ReadLine());
             Console.Write("Введите имя: ");
-            user_name = Console.ReadLine();
+            _userName = Console.ReadLine();
 
             await Task.Run(Receive);
 
             await Send();
         }
 
-        static async Task Send()
+        private static async Task Send()
         {
             while (true)
             {
@@ -33,16 +34,16 @@ namespace UDP_Chat
                 var message = Console.ReadLine();
                 Console.ResetColor();
 
-                var data = Encoding.Unicode.GetBytes($"{user_name}|{message}");
-                await Udp.SendAsync(data, multicast_ip, port);
+                var data = Encoding.Unicode.GetBytes($"{_userName}|{message}");
+                await Udp.SendAsync(data, _multicastIp, _port);
             }
         }
 
-        static async Task Receive()
+        private static async Task Receive()
         {
             while (true)
             {
-                var result = await Udp.ReceiveMulticastAsync(port, multicast_ip);
+                var result = await Udp.ReceiveMulticastAsync(_port, _multicastIp);
                 var data = result.Buffer;
                 var temp = Encoding.Unicode.GetString(data);
                 var t = temp.Split('|');
