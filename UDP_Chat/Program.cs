@@ -10,7 +10,7 @@ namespace UDP_Chat
         private static string multicast_ip;
         private static int port;
         private static string user_name;
-        static void Main()
+        static async Task Main()
         {
             Console.Write("Введите ip-адрес рассылки: ");
             multicast_ip = Console.ReadLine();
@@ -19,9 +19,9 @@ namespace UDP_Chat
             Console.Write("Введите имя: ");
             user_name = Console.ReadLine();
 
-            Task.Run(Receive);
+            await Task.Run(Receive);
 
-            Send();
+            await Send();
         }
 
         static async Task Send()
