@@ -5,4 +5,8 @@
         <TargetFramework>net5.0</TargetFramework>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\UDP_Chat_Multicast_Lib\UDP_Chat_Multicast_Lib.csproj" />
+    </ItemGroup>
+
 </Project>
